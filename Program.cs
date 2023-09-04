@@ -30,12 +30,12 @@ string[] strArray = new string[size];  // создание массива зад
 for (int i = 0; i < size; i++)   // Вводим элементы массива
 {
    Console.Write($"Введите элемент {i + 1}: ");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine()!;
             
             while (string.IsNullOrWhiteSpace(input))
             {
                 Console.WriteLine("Пожалуйста, введите строку: ");
-                input = Console.ReadLine();
+                input = Console.ReadLine()!;
             }
 
             strArray[i] = input;
