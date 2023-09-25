@@ -10,13 +10,18 @@
 void FilterAndPrintShortStrings(string[] array)   // Метод принимает на вход массив строк и выводит строки <=3 символов
 {
     Console.WriteLine("Строки длиной 3 и меньше:");
-
+    int count_of_founded = 0; // переменная для отслеживания количества слов соответствующим условиям
     foreach (string str in array)
     {
         if (str.Length <= 3)
         {
             Console.WriteLine(str);
+            count_of_founded += 1;
         }
+    }
+    if (count_of_founded == 0) // проверка на случай если нет соответсвий критериям
+    {
+        Console.WriteLine("Соответствий не найдено");
     }
 }
 Console.Write("Введите размерность массива: ");
@@ -29,16 +34,16 @@ string[] strArray = new string[size];  // создание массива зад
 
 for (int i = 0; i < size; i++)   // Вводим элементы массива
 {
-   Console.Write($"Введите элемент {i + 1}: ");
-            string input = Console.ReadLine()!;
-            
-            while (string.IsNullOrWhiteSpace(input))
-            {
-                Console.WriteLine("Пожалуйста, введите строку: ");
-                input = Console.ReadLine()!;
-            }
+    Console.Write($"Введите элемент {i + 1}: ");
+    string input = Console.ReadLine()!;
 
-            strArray[i] = input;
+    while (string.IsNullOrWhiteSpace(input))
+    {
+        Console.WriteLine("Пожалуйста, введите строку: ");
+        input = Console.ReadLine()!;
+    }
+
+    strArray[i] = input;
 }
 
 FilterAndPrintShortStrings(strArray); // Вызываем метод для фильтрации и вывода строк
