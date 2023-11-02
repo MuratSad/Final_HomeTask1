@@ -19,7 +19,7 @@ void FilterAndPrintShortStrings(string[] array)   // Метод принимае
             count_of_founded += 1;
         }
     }
-    if (count_of_founded == 0) // проверка на случай если нет соответсвий критериям
+    if (count_of_founded == 0) // проверка на случай если нет соответствий критериям
     {
         Console.WriteLine("Соответствий не найдено");
     }
